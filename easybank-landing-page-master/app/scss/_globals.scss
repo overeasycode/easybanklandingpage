@@ -1,0 +1,169 @@
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    line-height: 1.4;
+    font-size: $fontM;
+    color: $grayishBlue;
+    overflow-x: hidden;
+    &.noscroll{
+    overflow: hidden;
+    }
+
+    animation: bodyanim 1s cubic-bezier(.55,.2,0,1.39) forwards;
+}
+
+h1,h2, h3{
+    margin-top: 0;
+    color: $darkBlue;
+    font-weight: $small;
+}
+
+h2{
+    margin-bottom: 1.5625rem; //mobile margin
+
+    @include breakpoint-up(large){
+        margin-bottom: 2.25rem;
+    }
+}
+
+ .ass{
+     a{
+        text-decoration: none;
+        color: $grayishBlue;
+        &:visited,  &:hover{
+            text-decoration: none;
+            color: $grayishBlue;
+            }
+        }
+}
+a{
+    text-decoration: none;
+}
+//padding nav
+
+.contpad{
+ 
+    margin: 0 auto;
+    max-width: 69.5625rem;
+
+    &--pall{
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+       
+    }
+    &--phero{
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+        @include breakpoint-down(small){
+        padding-bottom: 7.5rem;
+    }
+    }
+    &--px{
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+    &--pl{
+        padding-left: 1.5rem;
+    }
+    &--pr{
+        padding-right: 1.5rem;
+    }
+    &--py{
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+    }
+    &--pt{
+        padding-top: 2.25rem;
+    }
+    &--pb{
+        padding-bottom: 2.25rem;
+    }
+
+    //nav pt
+    &--ppt{
+        padding-top: 1rem;
+    }
+  
+    //nav pb
+    &--ppb{
+        padding-bottom: 1.1875rem;
+    }
+}
+
+//button
+button, .button{
+    background-color: $buttonColor;
+    background: $buttonGradient;
+    color: $white;
+    border: 0;
+    padding: .875rem 2.1875rem;
+    border-radius: 50px;
+    cursor: pointer; 
+    font-family: 'Public Sans', sans-serif;
+    font-weight: $medium;
+    transition: all 300ms ease-in-out;
+    font-size: $fontS;
+    &:hover{
+        filter: brightness(120%);
+    }
+}
+
+#hero{
+    a{
+        color: $white;
+    }
+}
+// Flexbox
+
+.navbar{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    &-jc-fe{
+        justify-content: flex-end;
+    }
+    &-jc-sb{
+        justify-content: space-between;
+
+    }
+    @media screen and (max-width: 375px) {
+        &-jc-sb{
+            padding-left:0;
+        }
+    }
+    &-jc-c{
+        justify-content: center;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+
+}
+
+//visiblity
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}

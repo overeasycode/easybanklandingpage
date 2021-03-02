@@ -1,0 +1,109 @@
+//articulas senior por favor
+
+.articulas{
+    background-color: $veryLightGray;
+
+    @include breakpoint-down(small){
+        //mobile
+        h2{
+            text-align: center;
+        }
+    }
+    &__image{
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 12.625rem;
+        transition: opacity 350ms ease-in-out;
+        &:hover{
+            opacity: .8;
+        }
+    }
+    &__item{
+        background-color: $white;
+        border-radius: 0.3125rem;
+        overflow: hidden;
+        transition: all 350ms ease-in-out;
+
+        &:hover{
+            transform: scale(110%) rotate(-2deg);
+            -webkit-box-shadow: -1px 0px 11px 5px rgba(45,49,77,0.17); 
+            box-shadow: -1px 0px 11px 5px rgba(45,49,77,0.17);
+        }
+    }
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr ; //fr = fractional unit search it up future nerd
+        gap: 1.25rem;
+        margin-bottom: 5rem;
+        @include breakpoint-down(large){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint-down(small){
+            grid-template-columns: repeat(1, 1fr);
+        }
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(4, 1fr);
+            }
+    }
+    &__text{
+        padding: 0.9375rem 1.875rem 2.5rem 1.875rem; //mobile
+        h3{
+            line-height: 1.2;
+            transition: color 350ms ease-in-out;
+        }
+        h5{
+            color: $grayishBlue;
+            font-weight: $medium;
+        }
+        p{
+            color: $grayishBlue;
+        }
+        @include breakpoint-up(medium){ //tab + desk
+        padding: 0.3125rem 1.5625rem 1.875rem 1.5625rem;
+        
+            h3{
+            font-size: $fontM;
+            margin-bottom: 0.875rem;
+            }
+            h5{
+            font-size: 0.75rem;
+       
+            margin-top: 1.8125rem;
+            margin-bottom: 0.375rem;
+            }
+            p{
+            line-height: 1.125rem;
+            margin-top: 0rem;
+            font-size: $fontS;
+            margin-bottom: -0.4375rem;
+            }
+        }
+        
+        @include breakpoint-down(small){ //mobile
+            h3{
+                font-size: 1.125rem;
+            }
+            p{
+                font-size: 0.8125rem;
+            }
+        }
+
+        //hover stuff
+
+        &:hover{
+            h3{
+                color: $brightCyan;
+            }
+            
+        }
+    }
+
+    
+    //stragglers
+    h2{
+        padding-top: 96px;
+        font-size: $fontXXXM;
+    }
+
+} 

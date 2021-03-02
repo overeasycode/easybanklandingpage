@@ -1,0 +1,124 @@
+//hero START-ON!
+.hero{
+    background-color: $veryLightGray;
+   
+    .contpad{
+        @include breakpoint-up(large){
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__article{
+        
+            @include breakpoint-up(large){
+                flex: 2;
+                h1{
+                text-align:left;
+                font-size: 2.4375rem;
+                font-size: $fontL;
+                
+            }
+                p{
+                    font-size: 1.0625rem;
+                }
+            }
+            @include breakpoint-down(medium){
+                text-align: center;
+                
+                h1{
+                    text-align: center;
+                    font-size: 2.375rem;
+                }
+                p{
+                    font-size: 15px;
+                }  
+            }
+    }
+        h1{
+        font-weight: $small;
+        color: $darkBlue;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+    p{
+        margin-top: 0;
+        line-height: 1.5;
+        margin-bottom: 2.25rem;
+    }
+
+    &__image{
+        //mobile
+        position: relative;
+        background-image: url('/images/bg-intro-mobile.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;
+        
+        @include breakpoint-up(medium){
+            min-height: 30rem;
+        }
+
+         @include breakpoint-up(large){
+            flex: 3;
+            order: 1;
+            height: 40.9375rem;
+            background-image: none;
+            //backimg
+            //background-image: url('/images/bg-intro-desktop.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+
+        }
+        &::before{
+           
+            @include breakpoint-up(large){
+                content: "";
+                position: absolute;
+                background-image: url('/images/bg-intro-desktop.svg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                width: 183%;
+                height: 139%;
+                top: -183px;
+            }
+            
+            //transform: scale(109%) translateY(-27%);
+        }
+
+        &::after{
+            //desktop
+            content: "";
+            position: absolute;
+            background-image: url('/images/image-mockups.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            width: 100%;
+            height: 110%;
+            top: 0px;
+            @include breakpoint-up(medium){
+                background-size: 60%;
+                top: -5em;
+                
+            }
+            @include breakpoint-up(large){
+                background-image: url('/images/image-mockups.png');
+                background-size: 95%;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                width: 111%;
+                height: 132%;
+                transform: scale(117%) translateY(-1%);
+                left: 194px;
+            }
+        }
+  
+    }
+
+  
+}
+

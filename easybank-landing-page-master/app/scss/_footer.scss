@@ -1,0 +1,121 @@
+.footer{
+    background-color: $darkBlue;
+    padding: 2.5rem;
+    text-align: center;
+    a {
+        color: $white;
+        
+    }
+
+    @include breakpoint-up(large){ //desktop grid
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 2fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:    "logo texts1 texts2 row1"
+                                 "links  texts1 texts2 row2";
+        justify-items: start; //grid items starts at the left
+        text-align: left;
+    }
+    &__logo{
+        @include breakpoint-down(medium){
+        margin-bottom: 1.875rem;
+        }
+        @include breakpoint-up(large){
+        grid-area: logo;
+   
+    }
+    }
+    &__links{
+        @include breakpoint-down(medium){
+            margin-bottom: 1.875rem;
+        }
+
+        @include breakpoint-up(large){
+            grid-area: links;
+            align-self: end;
+            margin-top: 45px;
+        }
+        > a{
+            display: inline-block;
+            @include breakpoint-down(medium){
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+        }
+            @include breakpoint-up(large){
+                transform: scale(95%);
+                margin-right: 0.625rem;
+            }
+            svg path{
+                transition: fill 300ms ease-in-out;
+            } 
+            &:hover svg path{
+                fill: $limeGreen;
+            }
+        }
+     
+    }
+    &__texts{
+        margin-top: 0;
+        padding: 0;
+        margin-bottom: 0;
+        text-decoration: none;
+        list-style: none;
+        font-size: $fontS;
+        line-height: 3.3vh;
+        &.col1{
+            @include breakpoint-up(large){
+                grid-area: texts1;
+            }
+        
+        }
+        &.col2{
+            @include breakpoint-up(large){
+                grid-area: texts2;
+            }
+        }
+       
+         a { 
+            transition: color 300ms ease-in-out;
+             &:hover{
+            color: $grayishBlue;
+        }
+    }
+    }
+    &__buttons{
+        
+        @include breakpoint-down(medium){
+            margin-top: 1.875rem;
+        }
+        p{
+            color: $grayishBlue;
+            margin: 0;
+            padding: 0;
+            font-size: $fontS;
+        }
+        @include breakpoint-down(medium){
+            margin-top: 2.5rem;
+        }
+        &.row1{
+            @include breakpoint-up(large){
+            grid-area: row1;
+            margin-top: 0;
+            justify-self: right; // use this when grid content refuses to be MOVED THIS IS BLACK MAGIC I TELL YA
+            text-align: right;
+            }
+        }
+        &.row2{
+            @include breakpoint-up(large){
+                grid-area: row2;
+                text-align: right;
+                justify-self: end;
+                align-self: end;
+            }
+        }
+    }
+    
+}
+
+.footerparent{
+    background-color: $darkBlue;
+}

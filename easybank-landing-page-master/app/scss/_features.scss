@@ -1,0 +1,136 @@
+.feature{
+
+    background-color: $lightGrayishBlue;
+    @include breakpoint-down(small){ //when mobile, texts are centered
+        text-align: center;
+    }
+
+    &__grid{
+        @include breakpoint-up(large){
+            display: flex;
+            flex-wrap: none;
+            }
+
+        @include breakpoint-down(medium){
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @include breakpoint-down(small){
+            display: block;
+        }
+        }
+    
+    &__item{
+        padding: 0.9375rem;
+        @include breakpoint-up(large){
+        display: block;
+  
+        }
+        @include breakpoint-down(medium){
+        flex: 0 0 50%;
+        }
+        @include breakpoint-down(small){
+            display: block;
+        }
+    }
+
+    &__icon{
+        @include breakpoint-up(large){
+            flex: 1;
+
+        }
+    }
+    &__title{
+        h3{
+            color: $darkBlue;
+            font-weight: $small;
+        }
+        @include breakpoint-up(large){
+            h3{
+                padding-top: 45px;
+                font-size: $fontXXM;
+                
+            }
+        }
+        @include breakpoint-down(medium){
+            h3 {
+            
+            }
+        }
+    }
+
+    h2{
+        padding-top: 113px;
+        font-size: 2.25rem;
+        @include breakpoint-down(medium){ //tablet + mobile
+            font-size: 1.875rem;
+            padding-top: 4.4375rem;
+        }
+        @include breakpoint-down(small) { //mobile (mainly)
+            margin: 0 auto;
+            max-width: 200px;
+           
+        }
+    }
+    p{
+        font-weight: $small;
+        max-width: 640px;
+        @include breakpoint-up(large){
+            margin-bottom: 2.5625rem;
+        }
+        @include breakpoint-down(small){
+            margin-bottom: 3.0625rem;
+            
+        }
+    }
+    
+    &__desc{
+     
+        @include breakpoint-up(large){
+            p{
+                font-size: $fontS;
+                max-width: 260px;
+                margin-bottom: 90px;
+                line-height: 24px;
+             
+            }
+
+        }
+        @include breakpoint-down(small){
+            p{
+                font-size: 15px;
+               /* padding-left: 15px;
+                padding-right: 15px;*/
+            }
+        }
+    }
+    //psmall below
+    &__psmall{
+        @include breakpoint-down(small){
+            font-size: 15px;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+    }
+    //mixin for tablet below
+    &__mixin{
+        @include breakpoint-up(medium){
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            padding-top: 2.25rem;
+            padding-bottom: 2.25rem;
+        }
+        
+    }
+    //align to column in desktop mode
+    &__aligntocolum{
+        @include breakpoint-up(large){
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        @include breakpoint-up(medium){
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+    }
+}

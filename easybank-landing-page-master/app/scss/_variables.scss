@@ -1,0 +1,27 @@
+// font sizes
+$fontS: 0.875rem; //14 pix
+$fontSM: 1rem; //16px
+$fontM: 1.125rem; //18 pix
+$fontXM: 1.1875rem; //19px
+$fontXXM: 1.5rem; // 24px
+$fontXXXM: 2.25rem; //36px
+$fontL: 3.25rem; // 52px
+
+//colors
+$darkBlue: hsl(233, 26%, 24%);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+//button
+$buttonGradient: linear-gradient(90deg, rgba(49,211,92,1) 0%, rgba(43,183,218,1) 100%);
+$buttonColor: rgb(49,211,92);
+//Neutral
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+//weights
+$small: 300;
+$medium: 400;
+$large: 700;
+
